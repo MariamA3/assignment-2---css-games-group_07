@@ -135,10 +135,35 @@ h1 {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  object-fit: cover; /* make the back image fit the container */
 }
+
 
 .card__face--front {
   z-index: 2;
+}
+
+/* Define a different back image for each pair of card types */
+.card--type1 .card__face--back {
+  background-image: url(/images/phocoena_sinus.webp);
+  
+}
+
+.card--type2 .card__face--back {
+  background: purple;
+}
+
+.card--type3 .card__face--back {
+  background:pink;
+}
+
+.card--type4 .card__face--back {
+  background:yellow;
+}
+
+/* Define a different back image for the trap cards */
+.card--trap .card__face--back {
+  background-image: url('/images/back-trap.png');
 }
 
 .card__face--back {
@@ -149,16 +174,18 @@ h1 {
   background-repeat: no-repeat;
 }
 
+.is-flipped .card__face--front {
+  transform: rotateY(180deg);
+}
 
-.is-flipped {
-  background: url("/images/Sustainable_Development_Goal_6.png") center center no-repeat;
-  background-size:contain;
-
+.is-flipped .card__face--back {
+  transform: rotateY(0deg);
 }
 
 .hidden {
   display: none;
 }
+
 
 /*How to section*/
 
