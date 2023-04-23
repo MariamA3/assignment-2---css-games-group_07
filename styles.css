@@ -1,12 +1,25 @@
 :root {
   --nav-blue: #3127ef;
   --un-blue: #04ADD9;
+  --background: #E7F4FB;
+  --ocean-brown: rgb(228,198,132);
+  --ocean-brown-gradient: linear-gradient(180deg, rgba(228,198,132,1) 0%, rgba(128,93,15,1) 77%);
+  --ocean-middle: rgb(228,198,132);
+  --ocean-middle-gradient: linear-gradient(180deg, rgba(228,198,132,1) 0%, rgba(0,106,171,1) 77%);
+  --ocean-blue: rgb(124,185,242);
+  --ocean-blue-gradient: linear-gradient(180deg, rgba(124,185,242,1) 0%, rgba(0,106,171,1) 77%);
 }
 
 
 body {
   margin: 0 auto;
   height: 100%;
+  background-color: var(--background);
+}
+
+#game-body {
+  background: var(--ocean-brown-gradient);
+  min-height: 100vh;
 }
 
 /*endre på og bruk BEM*/
@@ -67,7 +80,14 @@ img {
   width: 20%;
 }
 
-
+p{
+border-radius: 15px;
+ padding: 10px 10px;
+background-color: var(--un-blue);
+color: white;
+font-size: large;
+line-height: 30px;
+}
 
 /*Game page*/
 
@@ -83,7 +103,7 @@ h1 {
 }
 
 .grid {
-  width: 370px;
+  width: auto;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
@@ -143,10 +163,13 @@ h1 {
 /*How to section*/
 
 .how-to-play {
-
-  bottom: 0px;
+  bottom: 0;
   width: 60%;
   margin: 0 auto;
+  background-color: var(--un-blue);
+  color: white;
+  padding: 5px;
+  border-radius: 0.5em;
 }
 
 .how-to-play h2 {

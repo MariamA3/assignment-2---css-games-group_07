@@ -3,7 +3,8 @@
 
 Assigment 2.2 - Group 07 - Card memorization
 
-What the project does? The CSS memory game is a web-based game that 
+What the project does? 
+The CSS memory game is a web-based game that 
 challenges players to match pairs of hidden icons by flipping over cards. 
 The game is implemented using HTML, CSS, and JavaScript, and is designed 
 to be simple and easy to play.
@@ -20,5 +21,10 @@ How users can get started with the project: To get started with the CSS memory g
 
 Where users can get help with your project: If users have questions or need help with the CSS memory game, they can refer to the documentation provided on the web page, which includes instructions on how to play the game and information about how it works. 
 
-Which technology is used
+Which technology is used?
+
+We primarely use CSS and HTML, for the style, animation and structure in this game, but there is also minimal use of JavaScript. This is to make the game work. 
+
 Who maintains and contributes to the project
+
+The contributers to this project are Mariam, Håkon and Julie. 
