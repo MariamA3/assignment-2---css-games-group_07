@@ -23,8 +23,8 @@ Where users can get help with your project: If users have questions or need help
 
 Which technology is used?
 
-We primarely use CSS and HTML, for the style, animation and structure in this game, but there is also minimal use of JavaScript. This is to make the game work. 
+We primarely use CSS (SASS, and BEM )and HTML, for the style, animation and structure in this game, but there is also minimal use of JavaScript. This is to make the game work. 
 
 Who maintains and contributes to the project
 
-The contributers to this project are Mariam, Håkon and Julie. 
+The contributers and maintainers of this project are Mariam, Håkon and Julie. 
