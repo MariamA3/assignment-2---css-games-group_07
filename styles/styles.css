@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --nav-blue: #3127ef;
   --un-blue: #04ADD9;
@@ -10,32 +11,23 @@
   --ocean-blue-gradient: linear-gradient(180deg, rgba(124,185,242,1) 0%, rgba(0,106,171,1) 77%);
 }
 
-
 body {
   margin: 0 auto;
   height: 100%;
-  background-color: var(--background);
-}
-
-#game-body {
-  background: var(--ocean-brown-gradient);
-  min-height: 100vh;
+  background-color: #E7F4FB;
 }
 
 /*endre på og bruk BEM*/
 /*nav*/
-
 nav {
-  background-color: var(--un-blue);
+  background-color: #04ADD9;
   float: right;
   border-radius: 0px 0px 0px 20px;
   margin-bottom: 8%;
   height: auto;
   display: flex;
   margin-right: 0;
-
 }
-
 nav a {
   padding: 20px;
   font-size: 20px;
@@ -43,20 +35,21 @@ nav a {
   color: white;
   text-transform: uppercase;
 }
-
 nav a:hover {
   transition-delay: 0.1s;
   transform: scale(1.1);
   border-radius: 5px;
 }
-
 nav a:focus {
-  color: var(--nav-blue);
+  color: #3127ef;
 }
 
-
-/*main page*/
-
+/* main page */
+main,
+.title,
+.container {
+  clear: right;
+}
 main,
 .title,
 .container {
@@ -73,29 +66,63 @@ main {
   padding-left: 15%;
   padding-right: 15%;
 }
-
+main {
+  text-align: center;
+  margin: 0 auto;
+  width: auto;
+  min-width: 35%;
+  height: auto;
+  margin-bottom: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
 
 img {
-  height:auto;
+  height: auto;
+  width: 20%;
+}
+img {
+  height: auto;
   width: 20%;
 }
 
-p{
-border-radius: 15px;
- padding: 10px 10px;
-background-color: var(--un-blue);
-color: white;
-font-size: large;
-line-height: 30px;
+p {
+  border-radius: 15px;
+  padding: 10px 10px;
+  background-color: var(--un-blue);
+  color: white;
+  font-size: large;
+  line-height: 30px;
+}
+p {
+  border-radius: 15px;
+  padding: 10px 10px;
+  background-color: var(--un-blue);
+  color: white;
+  font-size: large;
+  line-height: 30px;
 }
 
-/*Game page*/
-
+/* Game page */
+h1 {
+  margin-left: 1em;
+  font-size: 2em;
+}
 h1 {
   margin-left: 1em;
   font-size: 2em;
 }
 
+#game-body {
+  background: linear-gradient(180deg, rgb(228, 198, 132) 0%, rgb(128, 93, 15) 77%);
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10%;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -106,20 +133,27 @@ h1 {
   width: auto;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
-  grid-template-rows: 1fr ;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  border: 1px solid white;
+}
+.grid {
+  width: auto;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   border: 1px solid white;
 }
 
 /*cards*/
-
 .card {
   display: flex;
   width: 115px;
   height: 160px;
   margin: 5px;
   border: 3px solid gold;
-  border-radius: .5em;
+  border-radius: 0.5em;
   justify-content: center;
   align-content: center;
   position: relative;
@@ -127,45 +161,35 @@ h1 {
   transform-style: preserve-3d;
   background: url("/images/card-back-blue.png");
   background-size: cover;
+  /* Define a different back image for each pair of card types */
+  /* Define a different back image for the trap cards */
 }
-
-.card__face--front,
-.card__face--back {
+.card__face--front, .card__face--back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  object-fit: cover; /* make the back image fit the container */
+  -o-object-fit: cover;
+     object-fit: cover; /* make the back image fit the container */
 }
-
-
 .card__face--front {
   z-index: 2;
 }
-
-/* Define a different back image for each pair of card types */
 .card--type1 .card__face--back {
   background-image: url(/images/phocoena_sinus.webp);
-  
 }
-
 .card--type2 .card__face--back {
   background: purple;
 }
-
 .card--type3 .card__face--back {
-  background:pink;
+  background: pink;
 }
-
 .card--type4 .card__face--back {
-  background:yellow;
+  background: yellow;
 }
-
-/* Define a different back image for the trap cards */
 .card--trap .card__face--back {
-  background-image: url('/images/back-trap.png');
+  background-image: url("/images/back-trap.png");
 }
-
 .card__face--back {
   transform: rotateY(180deg);
   z-index: 1;
@@ -173,21 +197,15 @@ h1 {
   background-position: center;
   background-repeat: no-repeat;
 }
-
-.is-flipped .card__face--front {
+.card.is-flipped .card__face--front {
   transform: rotateY(180deg);
 }
-
-.is-flipped .card__face--back {
+.card.is-flipped .card__face--back {
   transform: rotateY(0deg);
 }
-
-.hidden {
+.card.hidden {
   display: none;
 }
-
-
-/*How to section*/
 
 .how-to-play {
   bottom: 0;
@@ -198,14 +216,11 @@ h1 {
   padding: 5px;
   border-radius: 0.5em;
 }
-
 .how-to-play h2 {
   font-size: 20px;
   text-align: center;
-
 }
-
 .how-to-play li {
   font-size: 17px;
   margin-bottom: 5px;
-}
+}/*# sourceMappingURL=styles.css.map */

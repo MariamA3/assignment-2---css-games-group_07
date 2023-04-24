@@ -1,0 +1,272 @@
+@import "./variables";
+
+
+:root {
+  --nav-blue: #3127ef;
+  --un-blue: #04ADD9;
+  --background: #E7F4FB;
+  --ocean-brown: rgb(228,198,132);
+  --ocean-brown-gradient: linear-gradient(180deg, rgba(228,198,132,1) 0%, rgba(128,93,15,1) 77%);
+  --ocean-middle: rgb(228,198,132);
+  --ocean-middle-gradient: linear-gradient(180deg, rgba(228,198,132,1) 0%, rgba(0,106,171,1) 77%);
+  --ocean-blue: rgb(124,185,242);
+  --ocean-blue-gradient: linear-gradient(180deg, rgba(124,185,242,1) 0%, rgba(0,106,171,1) 77%);
+}
+
+body {
+  margin: 0 auto;
+  height: 100%;
+  background-color: $background;
+}
+
+
+
+/*endre på og bruk BEM*/
+/*nav*/
+
+nav {
+  background-color: $un-blue;
+  float: right;
+  border-radius: 0px 0px 0px 20px;
+  margin-bottom: 8%;
+  height: auto;
+  display: flex;
+  margin-right: 0;
+
+  a {
+    padding: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+
+    &:hover {
+      transition-delay: 0.1s;
+      transform: scale(1.1);
+      border-radius: 5px;
+    }
+
+    &:focus {
+      color: $nav-blue;
+    }
+  }
+}
+
+
+
+/* main page */
+
+main,
+.title,
+.container {
+  clear: right;
+  
+  & {
+    clear: right;
+  }
+}
+
+main {
+  text-align: center;
+  margin: 0 auto;
+  width: auto;
+  min-width: 35%;
+  height: auto;
+  margin-bottom: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+  
+  & {
+    text-align: center;
+    margin: 0 auto;
+    width: auto;
+    min-width: 35%;
+    height: auto;
+    margin-bottom: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+
+img {
+  height: auto;
+  width: 20%;
+  
+  & {
+    height: auto;
+    width: 20%;
+  }
+}
+
+p {
+  border-radius: 15px;
+  padding: 10px 10px;
+  background-color: var(--un-blue);
+  color: white;
+  font-size: large;
+  line-height: 30px;
+  
+  & {
+    border-radius: 15px;
+    padding: 10px 10px;
+    background-color: var(--un-blue);
+    color: white;
+    font-size: large;
+    line-height: 30px;
+  }
+}
+
+/* Game page */
+
+h1 {
+  margin-left: 1em;
+  font-size: 2em;
+  
+  & {
+    margin-left: 1em;
+    font-size: 2em;
+  }
+}
+
+#game-body {
+    background: $ocean-brown-gradient;
+    min-height: 100vh;
+  }
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10%;
+  
+  & {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10%;
+  }
+}
+
+.grid {
+  width: auto;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  border: 1px solid white;
+  
+  & {
+    width: auto;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    border: 1px solid white;
+  }
+}
+
+
+/*cards*/
+
+.card {
+    display: flex;
+    width: 115px;
+    height: 160px;
+    margin: 5px;
+    border: 3px solid gold;
+    border-radius: .5em;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    background: url("/images/card-back-blue.png");
+    background-size: cover;
+  
+    &__face--front,
+    &__face--back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      object-fit: cover; /* make the back image fit the container */
+    }
+  
+    &__face--front {
+      z-index: 2;
+    }
+  
+    /* Define a different back image for each pair of card types */
+    &--type1 {
+      & .card__face--back {
+        background-image: url(/images/phocoena_sinus.webp);
+      }
+    }
+  
+    &--type2 {
+      & .card__face--back {
+        background: purple;
+      }
+    }
+  
+    &--type3 {
+      & .card__face--back {
+        background: pink;
+      }
+    }
+  
+    &--type4 {
+      & .card__face--back {
+        background: yellow;
+      }
+    }
+  
+    /* Define a different back image for the trap cards */
+    &--trap {
+      & .card__face--back {
+        background-image: url('/images/back-trap.png');
+      }
+    }
+  
+    &__face--back {
+      transform: rotateY(180deg);
+      z-index: 1;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  
+    &.is-flipped {
+      & .card__face--front {
+        transform: rotateY(180deg);
+      }
+  
+      & .card__face--back {
+        transform: rotateY(0deg);
+      }
+    }
+  
+    &.hidden {
+      display: none;
+    }
+  }
+  
+  .how-to-play {
+    bottom: 0;
+    width: 60%;
+    margin: 0 auto;
+    background-color: var(--un-blue);
+    color: white;
+    padding: 5px;
+    border-radius: 0.5em;
+  
+    h2 {
+      font-size: 20px;
+      text-align: center;
+    }
+  
+    li {
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+  }
+  
+
