@@ -114,7 +114,6 @@ h1 {
 }
 
 #game-body {
-  background: linear-gradient(180deg, rgb(228, 198, 132) 0%, rgb(128, 93, 15) 77%);
   min-height: 100vh;
 }
 
